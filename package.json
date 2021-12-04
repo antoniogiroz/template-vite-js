@@ -1,0 +1,25 @@
+{
+  "name": "template-vite-js",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "lint": "eslint --fix --ext .js .",
+    "format": "prettier --write .",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^8.4.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.0",
+    "prettier": "^2.5.1",
+    "vite": "^2.6.4"
+  },
+  "lint-staged": {
+    "*.{js,md,html,css,scss}": "pnpm format",
+    "*.{js}": "cross-env NODE_ENV=production pnpm lint"
+  }
+}
